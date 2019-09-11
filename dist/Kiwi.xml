@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>C:\Users\saiyen\Documents\NetBeansProjects\Source\PRJT4_EQ27_\dist\App_1.jar</jar>
+  <outfile>C:\Users\saiyen\Desktop\Kiwi.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>C:\Users\saiyen\Desktop\Kiwi.ico</icon>
+  <singleInstance>
+    <mutexName>E51DB3D0-6EFE-4ECE-9AF2-65A72C26D33F </mutexName>
+    <windowTitle></windowTitle>
+  </singleInstance>
+  <jre>
+    <path></path>
+    <bundledJre64Bit>false</bundledJre64Bit>
+    <bundledJreAsFallback>false</bundledJreAsFallback>
+    <minVersion>1.6.0</minVersion>
+    <maxVersion></maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+    <runtimeBits>64/32</runtimeBits>
+  </jre>
+  <versionInfo>
+    <fileVersion>1.0.0.0</fileVersion>
+    <txtFileVersion>1.0.0.0</txtFileVersion>
+    <fileDescription>Pour le Ministère de l’Education Nationale </fileDescription>
+    <copyright>Team 27</copyright>
+    <productVersion>1.0.0.0</productVersion>
+    <txtProductVersion>1.0.0.0</txtProductVersion>
+    <productName>Kiwi</productName>
+    <companyName></companyName>
+    <internalName>Kiwi : Editeur d’animation de polygones</internalName>
+    <originalFilename>Kiwi.exe</originalFilename>
+  </versionInfo>
+</launch4jConfig>

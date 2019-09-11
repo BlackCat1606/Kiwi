@@ -1,0 +1,38 @@
+ @FXML
+    private Spinner rayon1;
+    @FXML
+    private Spinner nb_cote1;
+    @FXML
+    private Label coord;
+    
+ @FXML
+    Spinner X;
+    @FXML
+    Spinner Y;
+
+SpinnerValueFactory svf = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,8);
+        SpinnerValueFactory svf1 = new SpinnerValueFactory.IntegerSpinnerValueFactory(3,100);
+        
+        rayon1.setValueFactory(svf);
+        
+        nb_cote1.setValueFactory(svf1);
+        
+        
+        SpinnerValueFactory svf2 = new SpinnerValueFactory.DoubleSpinnerValueFactory(-22.5,22.5,0.0,0.5);
+        SpinnerValueFactory svf3 = new SpinnerValueFactory.DoubleSpinnerValueFactory(-12.5,12.5,0.0,0.5);
+        X.setValueFactory(svf2);
+        Y.setValueFactory(svf3);
+
+------------------
+coord.setText(" X = " +Math.round(notreGrille.pixelToX(poly_select.getTranslateX())) + " Y =" + Math.round(notreGrille.pixelToY(poly_select.getTranslateY())));
+-----------------
+#label .text
+{
+    -fx-effect: dropshadow(one-pass-box,white,0,1,0,1);
+}
+#label
+{
+    -fx-background-color: linear-gradient(to bottom,#dbdcdd 0% , #a9a9ab 100%);
+    -fx-padding: 6px;
+    -fx-font-size:1.2em;
+}

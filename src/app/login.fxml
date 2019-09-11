@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="login" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.91" prefHeight="299.0" prefWidth="532.0" stylesheets="@css.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.loginController">
+   <children>
+      <ImageView fitHeight="299.0" fitWidth="532.0">
+         <image>
+            <Image url="@../Icons/LogIN.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton id="student" fx:id="eleve" layoutX="61.0" layoutY="75.0" onAction="#eleve" prefHeight="150.0" prefWidth="148.0" styleClass="student" stylesheets="@css.css">
+         <graphic>
+            <ImageView fx:id="student" fitHeight="136.0" fitWidth="138.0" pickOnBounds="true" preserveRatio="true" styleClass="student">
+               <image>
+                  <Image url="@../Icons/1460346842_elementary_school.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip text="Se connecter en tant qu'éleve" />
+         </tooltip>
+      </JFXButton>
+      <JFXButton fx:id="enseignant" layoutX="304.0" layoutY="80.0" onAction="#enseignant" prefHeight="136.0" prefWidth="158.0" styleClass="student" stylesheets="@css.css">
+         <graphic>
+            <ImageView fx:id="enseg" fitHeight="133.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true" styleClass="student">
+               <image>
+                  <Image url="@../Icons/1460346685_Teacher.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip text="Se connecter en tant qu'enseignant " />
+         </tooltip>
+      </JFXButton>
+      <JFXButton fx:id="exit" layoutX="470.0" layoutY="242.0" onAction="#exit" prefHeight="45.0" prefWidth="47.0">
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="42.0">
+               <image>
+                  <Image url="@../Icons/1461596887_exit.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip text="Quitter" />
+         </tooltip>
+      </JFXButton>
+   </children>
+</AnchorPane>

@@ -1,0 +1,60 @@
+.button {
+
+    -fx-background-color:
+
+        rgba(0, 0, 0, 0.8),
+
+        #6a97f1,
+
+        linear-gradient(#4a5661 0%, #6a97f1 20%, #1f242a 100%),
+
+        radial-gradient(center 50% 0%, radius 100%, rgba(135,142,148,0.9),
+
+        rgba(255,0,255,0));
+
+    -fx-background-radius: 7, 6, 5, 4, 3, 5;
+
+    -fx-font-family: "Arial";
+
+    -fx-text-fill: white;
+
+    -fx-font-size: 18;
+    
+}
+.background {
+    -fx-background-repeat: repeat;
+
+    -fx-background-color:
+
+        linear-gradient(#38424b 0%, #6a97f1 20%, #191d22 100%),
+
+        linear-gradient(#6a97f1, #191d22),
+
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+
+}
+.left {
+    -fx-background-repeat: repeat; 
+    -fx-background-color:
+
+        linear-gradient(#38424b 0%, #6a97f1 20%, #191d22 100%),
+
+        linear-gradient(#6a97f1, #191d22),
+
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+}
+.leftt {
+    -fx-background-repeat: repeat; 
+    -fx-background-color:
+
+        linear-gradient(#cce6ff 0%, #cce6ff 20%, #cce6ff 100%),
+
+        linear-gradient(#cce6ff, #cce6ff),
+
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+}
+#grille{
+    
+}
+.none{
+}

@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.input.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.embed.swing.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+   
+                  <AnchorPane id="AnchorPane" fx:id="principale" prefHeight="701.0" prefWidth="1400.0" styleClass="thumb" stylesheets="@css.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.InterfaceController">
+                     <children>
+                        <ImageView fitHeight="738.0" fitWidth="1400.0">
+                           <image>
+                              <Image url="@../Icons/PageIntermediare.jpg" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="7.0" layoutY="-4.0" prefHeight="744.0" prefWidth="1405.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="-4.0">
+                           <children>
+                              <BorderPane fx:id="bor" prefHeight="646.0" prefWidth="1624.0">
+                                 <center>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <center>
+                                          <BorderPane fx:id="borderPane" prefHeight="606.0" prefWidth="973.0" BorderPane.alignment="CENTER">
+                                             <center>
+                                                <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" layoutX="5.0" layoutY="5.0" prefHeight="602.0" prefWidth="936.0" style="-fx-background-color: #38ABC0;" stylesheets="@caspian.css" BorderPane.alignment="CENTER">
+                                                   <BorderPane.margin>
+                                                      <Insets />
+                                                   </BorderPane.margin>
+                                                   <tooltip>
+                                                      <Tooltip text="La grille" />
+                                                   </tooltip>
+                                                </ScrollPane>
+                                             </center>
+                                             <BorderPane.margin>
+                                                <Insets right="5.0" />
+                                             </BorderPane.margin>
+                                          </BorderPane>
+                                       </center>
+                                       <top>
+                                          <AnchorPane prefHeight="47.0" prefWidth="956.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <ToolBar prefHeight="62.0" prefWidth="937.0" styleClass="top-toolbar">
+                                                   <items>
+                                                      <JFXButton onAction="#nouvelle" prefHeight="40.0" prefWidth="75.0">
+                                                         <graphic>
+                                                            <ImageView fitHeight="43.0" fitWidth="48.0">
+                                                               <image>
+                                                                  <Image url="@../Icons/Add%20File-50.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <tooltip>
+                                                            <Tooltip text="Nouvelle scéne" />
+                                                         </tooltip>
+                                                      </JFXButton>
+                                                      <JFXButton fx:id="Sauv" onAction="#Save">
+                                                         <graphic>
+                                                            <ImageView fitHeight="43.0" fitWidth="48.0">
+                                                               <image>
+                                                                  <Image url="@../Icons/Save-50.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <tooltip>
+                                                            <Tooltip text="Sauvegarder la scéne" />
+                                                         </tooltip>
+                                                      </JFXButton>
+                                                      <JFXButton fx:id="Scale1" maxHeight="0.0" maxWidth="-Infinity" onAction="#scale1" prefHeight="40.0" prefWidth="75.0">
+                                                         <graphic>
+                                                            <ImageView fitHeight="43.0" fitWidth="48.0">
+                                                               <image>
+                                                                  <Image url="@../Icons/Zoom%20In-50.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <tooltip>
+                                                            <Tooltip text="Zoom +" />
+                                                         </tooltip>
+                                                      </JFXButton>
+                                                      <JFXButton fx:id="Scale2" onAction="#scale2" prefHeight="40.0" prefWidth="75.0">
+                                                         <graphic>
+                                                            <ImageView fitHeight="43.0" fitWidth="48.0">
+                                                               <image>
+                                                                  <Image url="@../Icons/Zoom%20Out-50.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <tooltip>
+                                                            <Tooltip text="Zoom -" />
+                                                         </tooltip>
+                                                      </JFXButton>
+                                                      <JFXButton fx:id="DeleteAll" layoutX="247.0" layoutY="7.0" maxHeight="49.0" maxWidth="-Infinity" onAction="#supprimertt" prefHeight="49.0" prefWidth="70.0">
+                                                         <graphic>
+                                                            <ImageView fitHeight="43.0" fitWidth="48.0">
+                                                               <image>
+                                                                  <Image url="@../Icons/Delete-50%20(1).png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <tooltip>
+                                                            <Tooltip text="Supprimer tout" />
+                                                         </tooltip>
+                                                      </JFXButton>
+                                                      <JFXButton fx:id="supp" onAction="#delete">
+                                                         <graphic>
+                                                            <ImageView fx:id="s" fitHeight="43.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../Icons/Delete-50.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <tooltip>
+                                                            <Tooltip text="Supprimer un polygone" />
+                                                         </tooltip>
+                                                      </JFXButton>
+                                                      <JFXButton fx:id="regrouper" onAction="#Grouper">
+                                                         <graphic>
+                                                            <ImageView fitHeight="43.0" fitWidth="48.0" translateY="2.0">
+                                                               <image>
+                                                                  <Image url="@../Icons/Add%20Link-50.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <tooltip>
+                                                            <Tooltip text="Regrouper des polygones">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../Icons/Groupage.jpg" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic></Tooltip>
+                                                         </tooltip>
+                                                      </JFXButton>
+                                                      <JFXButton fx:id="degrouper" onAction="#Degrouper">
+                                                         <graphic>
+                                                            <ImageView fitHeight="43.0" fitWidth="48.0" translateY="1.0">
+                                                               <image>
+                                                                  <Image url="@../Icons/Broken%20Link-50.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <tooltip>
+                                                            <Tooltip text="Dégrouper des polygones">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../Icons/dégroupage.jpg" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic></Tooltip>
+                                                         </tooltip>
+                                                      </JFXButton>
+                                                      <JFXButton fx:id="path" onAction="#Path">
+                                                         <graphic>
+                                                            <ImageView fitHeight="43.0" fitWidth="48.0">
+                                                               <image>
+                                                                  <Image url="@../Icons/Polyline-50.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <tooltip>
+                                                            <Tooltip text="Trajectoire polygones">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../Icons/Path%20poly.PNG" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic></Tooltip>
+                                                         </tooltip>
+                                                      </JFXButton>
+                                                      <JFXButton fx:id="Path_grp" onAction="#Path_GRP">
+                                                         <graphic>
+                                                            <ImageView fitHeight="43.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../Icons/1461621497_Significon-LastFM.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <tooltip>
+                                                            <Tooltip text="Trajectoire objet complexe">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../Icons/path%20grp.PNG" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic></Tooltip>
+                                                         </tooltip></JFXButton>
+                                                   </items>
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <stylesheets>
+                                                      <URL value="@css.css" />
+                                                      <URL value="@../../../../../../../../App_1/src/app/caspian.css" />
+                                                   </stylesheets>
+                                                </ToolBar>
+                                             </children>
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </AnchorPane>
+                                       </top>
+                                    </BorderPane>
+                                 </center>
+                                 <left>
+                                    <JFXTabPane prefHeight="646.0" prefWidth="227.0" BorderPane.alignment="CENTER">
+                                       <tabs>
+                                          <Tab text="Fichier">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="axis-tick-mark">
+                                                   <children>
+                                                      <VBox fx:id="vbox" layoutY="-1.0" prefHeight="602.0" prefWidth="229.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Nouveau">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="587.0" prefWidth="227.0">
+                                                   <children>
+                                                      <VBox prefHeight="622.0" prefWidth="231.0">
+                                                         <children>
+                                                            <AnchorPane prefHeight="455.0" prefWidth="231.0" styleClass="axis-tick-mark">
+                                                               <children>
+                                                                  <Label layoutX="21.0" layoutY="29.0" prefHeight="17.0" prefWidth="44.0" text="Rayon">
+                                                                     <effect>
+                                                                        <Lighting>
+                                                                           <bumpInput>
+                                                                              <Shadow />
+                                                                           </bumpInput>
+                                                                           <light>
+                                                                            
+                                                                           </light>
+                                                                        </Lighting>
+                                                                     </effect>
+                                                                  </Label>
+                                                                  <Label layoutX="11.0" layoutY="74.0" prefHeight="17.0" prefWidth="105.0" text="Nombre de cotés">
+                                                                     <effect>
+                                                                        <Lighting>
+                                                                           <bumpInput>
+                                                                              <Shadow />
+                                                                           </bumpInput>
+                                                                           <light>
+                                                                          
+                                                                           </light>
+                                                                        </Lighting>
+                                                                     </effect>
+                                                                  </Label>
+                                                                  <JFXButton fx:id="Btn_creer_poly" layoutX="158.0" layoutY="119.0" onAction="#creerPolygone" prefWidth="122.0" ripplerFill="BLACK" styleClass="button-raised" stylesheets="@css.css" text="Créer">
+                                                                     <font>
+                                                                        <Font size="15.0" />
+                                                                     </font>
+                                                                     <tooltip>
+                                                                        <Tooltip text="Créer un polygone" />
+                                                                     </tooltip>
+                                                                  </JFXButton>
+                                                                  <Separator layoutX="16.0" layoutY="165.0" prefWidth="200.0" />
+                                                                  <TextField fx:id="rayon" layoutX="109.0" layoutY="27.0" prefHeight="25.0" prefWidth="105.0" promptText="rayon" />
+                                                                  <TextField fx:id="nb_cote" layoutX="108.0" layoutY="71.0" prefHeight="25.0" prefWidth="105.0" promptText="nombre de cortés" />
+                                                                  <VBox layoutX="-5.0" layoutY="300.0" prefHeight="444.0" prefWidth="227.0">
+                                                                     <children>
+                                                                        <HBox prefHeight="100.0" prefWidth="200.0" translateY="-120.0">
+                                                                           <children>
+                                                                              <Button fx:id="carre_shape" mnemonicParsing="false" onAction="#creerCarre" prefHeight="100.0" prefWidth="119.0" style="-fx-background-color: #096272;">
+                                                                                 <effect>
+                                                                                    <Blend />
+                                                                                 </effect>
+                                                                                 <graphic>
+                                                                                    <ImageView fitHeight="91.0" fitWidth="100.0">
+                                                                                       <image>
+                                                                                          <Image url="@../Icons/carre.png" />
+                                                                                       </image>
+                                                                                    </ImageView>
+                                                                                 </graphic>
+                                                                                 <tooltip>
+                                                                                    <Tooltip text="Créer un caré" />
+                                                                                 </tooltip>
+                                                                              </Button>
+                                                                              <Button mnemonicParsing="false" onAction="#creerHexagone" prefHeight="100.0" prefWidth="103.0" style="-fx-background-color: #096272;">
+                                                                                 <graphic>
+                                                                                    <ImageView fitHeight="100.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
+                                                                                       <image>
+                                                                                          <Image url="@../Icons/hexagon-xxl.png" />
+                                                                                       </image>
+                                                                                    </ImageView>
+                                                                                 </graphic></Button>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox prefHeight="100.0" prefWidth="200.0" translateY="-120.0">
+                                                                           <children>
+                                                                              <Button mnemonicParsing="false" onAction="#creerTriangle" prefHeight="100.0" prefWidth="119.0" style="-fx-background-color: #096272;">
+                                                                                 <graphic>
+                                                                                    <ImageView fitHeight="89.0" fitWidth="93.0">
+                                                                                       <image>
+                                                                                          <Image url="@../Icons/triangle.png" />
+                                                                                       </image>
+                                                                                    </ImageView>
+                                                                                 </graphic>
+                                                                                 <tooltip>
+                                                                                    <Tooltip text="Créer un triangle" />
+                                                                                 </tooltip>
+                                                                              </Button>
+                                                                              <Button mnemonicParsing="false" onAction="#creerCercle" prefHeight="100.0" prefWidth="112.0" style="-fx-background-color: #096272;">
+                                                                                 <graphic>
+                                                                                    <ImageView fitHeight="87.0" fitWidth="89.0" translateX="-3.0" translateY="-2.0">
+                                                                                       <image>
+                                                                                          <Image url="@../Icons/cercle.png" />
+                                                                                       </image>
+                                                                                    </ImageView>
+                                                                                 </graphic>
+                                                                                 <tooltip>
+                                                                                    <Tooltip text="Créer un cercle" />
+                                                                                 </tooltip>
+                                                                              </Button>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                          </Tab>
+                                       </tabs>
+                                    </JFXTabPane>
+                                 </left>
+                                 <right>
+                                    <VBox prefHeight="627.0" prefWidth="217.0" spacing="3.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Pane prefHeight="128.0" prefWidth="217.0">
+                                             <children>
+                                                <BorderPane layoutX="-3.0" layoutY="2.0" prefHeight="132.0" prefWidth="217.0">
+                                                   <center>
+                                                      <StackPane fx:id="pane" prefHeight="108.0" prefWidth="211.0" BorderPane.alignment="CENTER" />
+                                                   </center>
+                                                   <bottom>
+                                                      <HBox prefHeight="19.0" prefWidth="217.0" BorderPane.alignment="CENTER">
+                                                         <children>
+                                                            <Label fx:id="nom_poly" prefHeight="17.0" prefWidth="88.0" text="Name" translateX="20.0" translateY="-10.0">
+                                                               <effect>
+                                                                  <Reflection />
+                                                               </effect>
+                                                            </Label>
+                                                            <Label fx:id="coord" prefHeight="17.0" prefWidth="100.0" text="Position" translateX="30.0" translateY="-9.0" />
+                                                         </children>
+                                                      </HBox>
+                                                   </bottom>
+                                                </BorderPane>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Pane>
+                                          <AnchorPane blendMode="SRC_ATOP" prefHeight="312.0" prefWidth="232.0" styleClass="axis-tick-mark">
+                                             <children>
+                                                <Accordion layoutX="26.0" layoutY="79.0" prefHeight="246.0" prefWidth="206.0" translateX="-30.0" translateY="-40.0">
+                                                   <panes>
+                                                      <TitledPane fx:id="tran" animated="false" text="Translation" textFill="#861414">
+                                                         <content>
+                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="82.0" prefWidth="201.0">
+                                                               <children>
+                                                                  <JFXButton fx:id="Transition" layoutX="149.0" layoutY="41.0" onAction="#Translation" ripplerFill="#832c2c" styleClass="button-raised" text="OK" textFill="#1a1919" />
+                                                                  <Label layoutY="10.0" text="X :" underline="true">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="12.0" />
+                                                                     </font></Label>
+                                                                  <Label layoutX="92.0" layoutY="10.0" prefHeight="17.0" prefWidth="21.0" text="Y :" underline="true">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="12.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Spinner fx:id="Y" layoutX="119.0" layoutY="5.0" prefHeight="27.0" prefWidth="70.0" />
+                                                                  <Spinner fx:id="X" layoutX="19.0" layoutY="5.0" prefHeight="27.0" prefWidth="70.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </content>
+                                                         <font>
+                                                            <Font name="System Bold" size="15.0" />
+                                                         </font>
+                                                         <graphic>
+                                                            <ImageView translateX="2.0">
+                                                               <image>
+                                                                  <Image url="@../Icons/One%20Way%20Transition%20Filled.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <tooltip>
+                                                            <Tooltip text="Translation">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../Icons/Translation.jpg" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic></Tooltip>
+                                                         </tooltip>
+                                                      </TitledPane>
+                                                      <TitledPane fx:id="rota" animated="false" prefHeight="115.0" prefWidth="206.0" text="  Rotation" textFill="#861414">
+                                                         <content>
+                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="81.0" prefWidth="204.0">
+                                                               <children>
+                                                                  <JFXSlider fx:id="slider_rot" layoutX="22.0" layoutY="41.0" max="180.0" min="-180.0" onMouseClicked="#Rotation" prefHeight="18.0" prefWidth="166.0">
+                                                                     <cursor>
+                                                                      
+                                                                     </cursor>
+                                                                     <effect>
+                                                                        <Lighting>
+                                                                           <bumpInput>
+                                                                              <Shadow />
+                                                                           </bumpInput>
+                                                                           <light>
+                                                                            
+                                                                           </light>
+                                                                        </Lighting>
+                                                                     </effect>
+                                                                  </JFXSlider>
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </content>
+                                                         <font>
+                                                            <Font name="System Bold" size="15.0" />
+                                                         </font>
+                                                         <graphic>
+                                                            <ImageView>
+                                                               <image>
+                                                                  <Image url="@../Icons/Rotate%20Right.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <tooltip>
+                                                            <Tooltip text="Rotation">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../Icons/Rotation.jpg" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic></Tooltip>
+                                                         </tooltip>
+                                                      </TitledPane>
+                                                      <TitledPane fx:id="eche" animated="false" prefHeight="92.0" prefWidth="203.0" text="  Echelle" textFill="#7c0b0b">
+                                                         <content>
+                                                            <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#Echelle" prefHeight="180.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <JFXSlider fx:id="slider" blockIncrement="0.2" layoutX="25.0" layoutY="31.0" max="4.0" onMouseClicked="#Echelle" translateY="10.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </content>
+                                                         <font>
+                                                            <Font name="System Bold" size="15.0" />
+                                                         </font>
+                                                         <graphic>
+                                                            <ImageView fitHeight="44.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../Icons/1461619319_Significon-YouTube%20(2).png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <tooltip>
+                                                            <Tooltip text="Changement d'echelle">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../Icons/Echelle.jpg" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic></Tooltip>
+                                                         </tooltip>
+                                                      </TitledPane>
+                                                   </panes>
+                                                </Accordion>
+                                                <JFXColorPicker fx:id="colorpicker" layoutX="47.0" layoutY="323.0" onAction="#setcouleur" prefHeight="38.0" prefWidth="89.0" promptText="Color" translateX="15.0" translateY="-36.0">
+                                                   <tooltip>
+                                                      <Tooltip text="Changer la couleur " />
+                                                   </tooltip></JFXColorPicker>
+                                                <Separator layoutX="-1.0" layoutY="344.0" prefHeight="1.0" prefWidth="225.0" />
+                                                <Separator layoutX="-4.0" layoutY="38.0" prefHeight="3.0" prefWidth="227.0" translateY="-10.0" />
+                                             </children>
+                                             <effect>
+                                                <Lighting>
+                                                   <bumpInput>
+                                                      <Shadow />
+                                                   </bumpInput>
+                                                   <light>
+                                                
+                                                   </light>
+                                                </Lighting>
+                                             </effect>
+                                          </AnchorPane>
+                                          <AnchorPane fx:id="modifier_parametre" prefHeight="85.0" prefWidth="224.0" translateY="-15.0">
+                                             <children>
+                                                <JFXButton fx:id="Btn_creer_poly1" layoutX="89.0" layoutY="67.0" onAction="#creerPolygone1" prefHeight="22.0" prefWidth="45.0" styleClass="button-raised" text="OK" translateX="45.0" translateY="5.0">
+                                                   <font>
+                                                      <Font size="10.0" />
+                                                   </font>
+                                                   <tooltip>
+                                                      <Tooltip text="Modifier les paramétres du polygone" />
+                                                   </tooltip>
+                                                </JFXButton>
+                                                <Label layoutX="24.0" layoutY="6.0" text="Rayon                  :" translateX="-20.0" />
+                                                <Label layoutX="18.0" layoutY="38.0" text="Nombre de cotés  :" translateX="-20.0" />
+                                                <Spinner fx:id="rayon1" layoutX="129.0" layoutY="2.0" prefHeight="25.0" prefWidth="81.0" translateX="-25.0" />
+                                                <Spinner fx:id="nb_cote1" layoutX="129.0" layoutY="37.0" prefHeight="20.0" prefWidth="82.0" translateX="-25.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <Separator prefWidth="200.0" />
+                                          <HBox prefHeight="42.0" prefWidth="232.0">
+                                             <children>
+                                                <ToggleButton fx:id="RECORD" mnemonicParsing="false" onMouseClicked="#record" prefHeight="40.0" prefWidth="47.0" style="-fx-background-color: #58a594;" translateX="20.0">
+                                                   <graphic>
+                                                      <ImageView fitHeight="29.0" fitWidth="30.0">
+                                                         <image>
+                                                            <Image url="@../Icons/Button-Rec-icon.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <tooltip>
+                                                      <Tooltip text="Enregistrer une animation" />
+                                                   </tooltip>
+                                                </ToggleButton>
+                                                <JFXButton fx:id="play_grp" onAction="#play_grp" prefHeight="43.0" prefWidth="48.0" translateX="20.0">
+                                                   <graphic>
+                                                      <ImageView fitHeight="31.0" fitWidth="31.0">
+                                                         <image>
+                                                            <Image url="@../Icons/1461074688_play_store.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <tooltip>
+                                                      <Tooltip text="Jouer l'animation">
+                                                         <graphic>
+                                                            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../Icons/play-exemple.PNG" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic></Tooltip>
+                                                   </tooltip>
+                                                </JFXButton>
+                                                <JFXButton fx:id="cling" translateX="50.0">
+                                                   <graphic>
+                                                      <ImageView fitHeight="30.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../Icons/Record-Normal-icon.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </JFXButton>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </VBox>
+                                 </right>
+                                 <top>
+                                    <HBox prefHeight="24.0" prefWidth="1400.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <MenuBar fx:id="menubar" prefHeight="27.0" prefWidth="228.0" styleClass="scroll-bar" stylesheets="@caspian.css">
+                                             <menus>
+                                                <Menu fx:id="file" mnemonicParsing="false" text="Fichier">
+                                                   <items>
+                                                      <MenuItem mnemonicParsing="false" onAction="#nouvelle" text="Nouveau">
+                                                         <accelerator>
+                                                            <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                                         </accelerator>
+                                                      </MenuItem>
+                                                      <MenuItem fx:id="Open" mnemonicParsing="false" onAction="#Open" text="Ouvrir">
+                                                         <accelerator>
+                                                            <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                                         </accelerator>
+                                                      </MenuItem>
+                                                      <MenuItem fx:id="Save" mnemonicParsing="false" onAction="#Save" text="Enregistrer">
+                                                         <accelerator>
+                                                            <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                                         </accelerator>
+                                                      </MenuItem>
+                                                      <MenuItem fx:id="SaveAs" mnemonicParsing="false" onAction="#SaveAS" text="Enregistrer sous">
+                                                         <accelerator>
+                                                            <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                                                         </accelerator>
+                                                      </MenuItem>
+                                                      <MenuItem fx:id="close" mnemonicParsing="false" onAction="#exit" text="Fermer" />
+                                                   </items>
+                                                </Menu>
+                                                <Menu id="highlightsButton" mnemonicParsing="false" text="Edition">
+                                                   <items>
+                                                      <MenuItem mnemonicParsing="false" text="Supprimer" />
+                                                      <MenuItem mnemonicParsing="false" onAction="#creer_seances" text="Nouvelle séance" />
+                                                   </items>
+                                                </Menu>
+                                                <Menu id="highlightsButton" fx:id="Comptes" mnemonicParsing="false" text="Comptes">
+                                                   <items>
+                                                      <MenuItem fx:id="afficher" mnemonicParsing="false" onAction="#Afficher" text="Afficher">
+                                                         <graphic>
+                                                            <ImageView id="highlightsButton">
+                                                               <image>
+                                                                  <Image url="@../Icons/User%20Group%20Man%20Woman-50.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </MenuItem>
+                                                      <MenuItem fx:id="nvcmpte" mnemonicParsing="false" onAction="#Creer" text="Creer">
+                                                         <graphic>
+                                                            <ImageView id="highlightsButton">
+                                                               <image>
+                                                                  <Image url="@../Icons/Add%20User%20Male-50.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </MenuItem>
+                                                      <MenuItem fx:id="supcmpte" mnemonicParsing="false" onAction="#deleteAccount" text="Supprimer">
+                                                         <graphic>
+                                                            <ImageView id="highlightsButton">
+                                                               <image>
+                                                                  <Image url="@../Icons/Remove%20User%20Male-50.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </MenuItem>
+                                                   </items>
+                                                </Menu>
+                                                <Menu id="highlightsButton" mnemonicParsing="false" text="Aide">
+                                                   <items>
+                                                      <MenuItem mnemonicParsing="false" onAction="#About" text="A propos" />
+                                                      <MenuItem fx:id="aide" mnemonicParsing="false" onAction="#aider" text="Aide">
+                                                         <accelerator>
+                                                            <KeyCodeCombination alt="UP" code="F1" control="UP" meta="UP" shift="UP" shortcut="ANY" />
+                                                         </accelerator></MenuItem>
+                                                   </items>
+                                                </Menu>
+                                             </menus>
+                                          </MenuBar>
+                                          <JFXButton fx:id="logout" onAction="#logout" prefHeight="32.0" prefWidth="32.0" translateX="1085.0">
+                                             <graphic>
+                                                <ImageView fitHeight="32.0" fitWidth="32.0" opacity="0.61">
+                                                   <image>
+                                                      <Image url="@../Icons/logout.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <tooltip>
+                                                <Tooltip text="Fermer la session" />
+                                             </tooltip>
+                                          </JFXButton>
+                                          <Label id="label" fx:id="userLabel" opacity="0.5" prefHeight="30.0" prefWidth="119.0" stylesheets="@css.css" text="Nom d'utilisateur" translateX="925.0">
+                                             <tooltip>
+                                                <Tooltip text="Nom de l'utilisateur" />
+                                             </tooltip></Label>
+                                       </children>
+                                    </HBox>
+                                 </top>
+                              </BorderPane>
+                           </children>
+                        </VBox>
+                        <StackPane fx:id="ModalDimmer" onMouseClicked="#floudis" prefHeight="701.0" prefWidth="1400.0" visible="false" />
+                     </children>
+                  </AnchorPane>
+ 

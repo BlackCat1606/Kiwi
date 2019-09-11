@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="lect" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1016.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.LecteurController">
+   <children>
+      <ImageView fitHeight="790.0" fitWidth="1468.0" layoutX="-218.0" layoutY="-28.0" opacity="0.78" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/wallup-40394.jpg" />
+         </image>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </ImageView>
+      <BorderPane fx:id="bor" layoutX="38.0" layoutY="12.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="940.0" stylesheets="@caspian.css">
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="33.0" prefWidth="988.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton fx:id="Resume">
+                     <graphic>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/play-icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Jouer ou Continuer" />
+                     </tooltip>
+                  </JFXButton>
+                  <JFXButton fx:id="pause">
+                     <graphic>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/pause-icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Pause" />
+                     </tooltip>
+                  </JFXButton>
+                  <JFXButton fx:id="stop">
+                     <graphic>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/stop-icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Arréter l'animation" />
+                     </tooltip>
+                  </JFXButton>
+                  <JFXButton fx:id="Replay">
+                     <graphic>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/replay-icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Rejouer l'animation" />
+                     </tooltip>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </bottom>
+         <top>
+            <HBox BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton fx:id="btn" alignment="CENTER_RIGHT" textAlignment="RIGHT" translateX="930.0">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <effect>
+                              <Lighting bumpInput="$null">
+                                 <light>
+                                  
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <image>
+                              <Image url="@../Icons/Geo2-Close-icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Fermer" />
+                     </tooltip>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <ScrollPane fx:id="scrollPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <content>
+                <AnchorPane fx:id="gr" minHeight="0.0" minWidth="0.0" prefHeight="648.0" prefWidth="944.0" />
+              </content>
+            </ScrollPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

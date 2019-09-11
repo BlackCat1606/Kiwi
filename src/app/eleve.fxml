@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.eleveController">
+   <children>
+      <ImageView fitHeight="636.0" fitWidth="667.0" layoutX="-14.0" layoutY="-181.0">
+         <image>
+            <Image url="@../Icons/LogIN.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="68.0" fitWidth="81.0" layoutX="14.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="undo" fitHeight="55.0" fitWidth="53.0" layoutX="14.0" layoutY="388.0" onMousePressed="#back" styleClass="back">
+         <image>
+            <Image url="@../Icons/1460599762_MB__back.png" />
+         </image>
+      </ImageView>
+      <JFXButton id="connecter" fx:id="connecter" layoutX="102.0" layoutY="300.0" onAction="#connect" prefHeight="55.0" prefWidth="217.0" ripplerFill="#cd6363" styleClass="connecter" stylesheets="@css.css" text="SE CONNECTER" textFill="WHITE" textOverrun="CLIP" AnchorPane.topAnchor="300.0">
+         <opaqueInsets>
+            <Insets top="10.0" />
+         </opaqueInsets>
+         <font>
+            <Font name="Wingdings 2" size="16.0" />
+         </font></JFXButton>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="131.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/1460346842_elementary_school.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="infoFalse" layoutX="113.0" layoutY="364.0" prefHeight="17.0" prefWidth="183.0" text="Les informations sont incorrectes !" textFill="#d02323" visible="false" />
+      <JFXButton fx:id="arabe" layoutX="333.0" layoutY="388.0" onAction="#arabe" prefHeight="40.0" prefWidth="53.0" text="AR" />
+      <Accordion layoutX="-59.0" layoutY="-114.0">
+        <panes>
+          <TitledPane animated="false" text="untitled 1" />
+          <TitledPane animated="false" text="untitled 2" />
+        </panes>
+      </Accordion>
+      <JFXTextField fx:id="user" layoutX="94.0" layoutY="185.0" maxWidth="224.0" minWidth="217.0" prefHeight="31.0" prefWidth="224.0" promptText="Nom d'utilisateur">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="pass" layoutX="95.0" layoutY="224.0" maxWidth="217.0" minWidth="217.0" prefHeight="31.0" prefWidth="217.0" promptText="Mot de passe">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </JFXPasswordField>
+   </children>
+</AnchorPane>
